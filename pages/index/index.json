@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
+    "mp-icon": "/miniprogram_npm/weui-miniprogram/icon/icon",
+    "mp-halfScreenDialog": "/miniprogram_npm/weui-miniprogram/half-screen-dialog/half-screen-dialog",
+    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog"
+
+  }
 }

@@ -7,7 +7,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    router: [],
   },
   //事件处理函数
   bindViewTap: function() {
@@ -15,7 +16,54 @@ Page({
       url: '../logs/logs'
     })
   },
+  jump: function(e){
+    console.log(e)
+    wx.navigateTo({
+      url: e.currentTarget.dataset.router,
+      success: function(res) {
+
+      },
+      fail: function(res) {
+
+      },
+      complete: function(res) {
+
+      },
+     })
+  },
   onLoad: function () {
+    this.setData({
+          router: [{
+              icon:'location',
+              color:'black',
+              size: 25,
+              type: 'field',
+              desc: '个人信息',
+              link: '/my',
+          },{
+              icon:'camera',
+              color:'black',
+              size: 25,
+              type: 'outline',
+              desc: 'demo演示',
+              link: '/my',
+          },{
+              icon:'like',
+              color:'black',
+              size: 25,
+              type: 'outline', //Icon类型，可选值 outline（描边），field（填充）
+              desc: '地址查询',
+              link: '../busInfo/busInfo',
+          },
+          {
+            icon:'note',
+            color:'black',
+            size: 25,
+            type: 'outline', //Icon类型，可选值 outline（描边），field（填充）
+            desc: '日志信息',
+            link: '../logs/logs',
+        }],
+      })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -50,5 +98,6 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+
 })
