@@ -1,0 +1,9 @@
+<!--pages/run/run.wxml-->
+<view class="container">
+    <view>
+        <view wx:for="{{stepInfoList}}">
+            <text>{{item.date}}:</text>
+            <text>{{item.step}}</text>
+        </view>
+    </view>
+</view>

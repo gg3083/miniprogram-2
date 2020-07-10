@@ -1,0 +1,3 @@
+<view class="contianer">
+  <text>{{scanData}}</text>
+</view>

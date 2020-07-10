@@ -1,0 +1,17 @@
+.space{
+    height: 30rpx;
+    background: #f8f8f8
+}
+#my{
+    width: 100%;
+}
+#my .info-desc{
+    font-size: 13px;
+    color: #888888;
+}
+.my-cells2{
+    width: 200px !important;
+}
+.my-cells2 .weui-cells_after-title {
+    margin-top: 0px !important;
+}

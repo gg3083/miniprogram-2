@@ -1,15 +1,22 @@
 <view class="container">
-  <view class="router">
-    <view class="router-item" wx:key="key"  wx:for="{{router}}">
-        <mp-icon type="{{item.type}}" icon="{{item.icon}}" color="{{item.color}}" size="{{item.size}}" >9</mp-icon>
-        <text bindtap='jump' data-router="{{item.link}}">{{item.desc}}</text>
+
+  <view>
+    <view class="fadeIn" wx:if="{{!hasUserInfo && canIUse}}">
+      <view class="weui-mask"></view>
+      <view class="weui-dialog">
+        <view class="weui-dialog__bd">该应用需要获取您的头像信息</view>
+        <view class="weui-dialog__ft">
+          <button class="weui-dialog__btn weui-dialog__btn_primary" bindtap="close" open-type="getUserInfo" bindgetuserinfo="getUserInfo">去获取</button>
+        </view>
+        </view>
     </view>
   </view>
-    <view>
-        <mp-dialog title="获取头像昵称" show="{{!hasUserInfo && canIUse}}">
-            <view>
-                <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">去获取</button>
-            </view>
-        </mp-dialog>
-    </view>
+  <view id="page-main">
+    <my-discovery wx:if="{{currentTab.index === 0}}"></my-discovery>
+    <my-info userInfo="{{userInfo}}" wx:if="{{currentTab.index === 1}}"></my-info>
+  </view>
+  <view style="height: 100rpx;width: 100%;background: #f8f8f8;" ></view>
+  <view style="height: 500rpx;width: 100%;background: #f8f8f8;" wx:if="{{currentTab.index === 1}}"></view>
+  <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{list}}" bindchange="tabChange"></mp-tabbar>
+
 </view>

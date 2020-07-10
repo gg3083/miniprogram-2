@@ -2,22 +2,6 @@
 .container {
   padding: 0rpx;
 }
-.router {
-    margin-top: 10rpx;
-    margin-left: 20rpx;
+#page-main{
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.router-item{
-    border: 1rpx #000 solid;
-    width: 32%;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-}
-.cancel {
 }

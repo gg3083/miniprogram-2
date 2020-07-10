@@ -1,15 +1,32 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/busInfo/busInfo"
+    "pages/busInfo/busInfo",
+    "pages/run/run",
+    "pages/map/map",
+    "pages/address/address",
+    "pages/vibration/vibration",
+    "pages/clipboard/clipboard",
+    "pages/message/message",
+    "pages/weather/weather",
+    "pages/weibo/weibo",
+    "pages/scan/scan"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "位置信息将用于展示所在地区"
+    }
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": [
+    "location"
+  ]
 }

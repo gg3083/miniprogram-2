@@ -1,0 +1,19 @@
+<!--这是一个普通的轮播-->
+<view class="container">
+    <swiper class="swiper-box" bind:change="swiperChange" interval="4000" circular autoplay>
+        <block wx:for="{{swiperList}}" wx:key="{{index}}">
+            <swiper-item>
+                <image class="targetImg" src="{{item}}" mode="aspectFill"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <!--重置小圆点的样式  -->
+    <view class="dots">
+        <view class="dotsBox" style='width:{{(swiperList.length*26+swiperList.length*10) + "rpx"}}'>
+            <!-- <view class="dotsBox" style='width:180rpx'> -->
+            <block wx:for="{{swiperList}}" wx:key="{{index}}">
+                <text class="dot {{index == currentIndex ? 'dot-active' : ''}}"></text>
+            </block>
+        </view>
+    </view>
+</view>

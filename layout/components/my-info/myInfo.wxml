@@ -1,0 +1,21 @@
+<view id="my">
+    <view class="cell info" id="info">
+        <mp-cell link hover>
+            <view slot="title" style="position: relative;margin-right: 10px;">
+                <!-- 写成内部样式，手机上不生效 -->
+                <image src="{{userInfo.avatarUrl}}" style="width: 100rpx;height: 100rpx;display: block;border-radius: 30rpx;"/>
+            </view>
+            <view>{{userInfo.nickName}}</view>
+            <view class="info-desc">{{userInfo.province}}-{{userInfo.city}}</view>
+        </mp-cell>
+    </view>
+    <view class="space"></view>
+    <mp-cells title="" ext-class="my-cells2">
+        <view class="cell" wx:key="key"  wx:for="{{router}}">
+            <mp-cell link hover value="{{item.title}}" footer="{{item.desc}}">
+                <!-- 写成内部样式，手机上不生效 -->
+                <image slot="title" src="{{item.icon}}" style="margin-right: 32rpx;vertical-align: middle;width:40rpx;height: 40rpx;"></image>
+            </mp-cell>
+        </view>
+    </mp-cells>
+</view>

@@ -3,7 +3,11 @@
     "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
     "mp-icon": "/miniprogram_npm/weui-miniprogram/icon/icon",
     "mp-halfScreenDialog": "/miniprogram_npm/weui-miniprogram/half-screen-dialog/half-screen-dialog",
-    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog"
-
+    "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar",
+    "mp-cells": "/miniprogram_npm/weui-miniprogram/cells/cells",
+    "mp-cell": "/miniprogram_npm/weui-miniprogram/cell/cell",
+    "mp-slideview": "/miniprogram_npm/weui-miniprogram/slideview/slideview",
+    "my-info": "/layout/components/my-info/myInfo",
+    "my-discovery": "/layout/components/discovery/discovery"
   }
 }

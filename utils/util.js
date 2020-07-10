@@ -8,12 +8,19 @@ const formatTime = date => {
 
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
-
+function formatDateYYYYMMDD(val) {
+  var date = new Date(val*1000);
+  var YY = date.getFullYear() + '-';
+  var MM = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+  var DD = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate());
+  return YY + MM + DD
+}
 const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  formatDateYYYYMMDD: formatDateYYYYMMDD
 }

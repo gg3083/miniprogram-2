@@ -1,0 +1,6 @@
+<view class="container">
+  <button bindtap="start">长</button>
+</view>
+<view class="container">
+  <button bindtap="startShort">短</button>
+</view>

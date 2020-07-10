@@ -1,4 +1,5 @@
 //app.js
+import {getCode} from "/utils/api/wechat"
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -10,6 +11,31 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: 'https://api.weixin.qq.com/sns/jscode2session',//这是固定的就是这个地址
+            data: {
+              appid:'wxae2560d59590027d',//小程序的ID
+              secret:'b9b3731ca195292987cb0a6a7ad08e45',//小程序的密钥
+              js_code:res.code,
+              grant_type:'authorization_code'
+            },
+            method: 'GET',
+            header:{
+              'content-type': 'application/json' // 默认值
+            },
+            success: function(res) {
+              wx.setStorageSync("openId", res.data.openid)
+              wx.setStorageSync("sessionKey", res.data.session_key)
+            },
+            fail: function(res) {
+              console.log('获取openId、sessionKey失败！' + res.errMsg)
+            }
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
+        }
       }
     })
     // 获取用户信息
@@ -34,6 +60,12 @@ App({
     })
   },
   globalData: {
-    userInfo: null
-  }
+    userInfo: null,
+    theme: 'light',
+    host: 'http://127.0.0.1:7000/api/v1',
+    appId: 'wxae2560d59590027d',
+    secret: 'b9b3731ca195292987cb0a6a7ad08e45',
+    GRID_DEMO_URL: '/example/index',
+    iconTabbar: '/assets/images/icon_tabbar.png'
+  },
 })

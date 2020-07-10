@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-swiper":"/layout/components/swiper/swiper",
+    "mp-grids": "/miniprogram_npm/weui-miniprogram/grids/grids"
+  }
+}
