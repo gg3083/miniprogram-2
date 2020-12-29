@@ -1,0 +1,3 @@
+/* pages/ball/ball.wxss */
+.page{height:100%}
+.weui-cells{margin-top: 0px;}

@@ -1,0 +1,61 @@
+<view>
+    <view class="weui-form" style="padding: 0px 0px;">
+        <view class="weui-form__text-area">
+            <h6 class="weui-form__title">规则选择</h6>
+        </view>
+        <view>
+            <view class="weui-cells weui-cells_form">
+                <view class="weui-cell weui-cell_active {{isWaring ? 'weui-cell_warn' : ''}}">
+                    <view class="weui-cell__hd"><label class="weui-label">组数：</label></view>
+                    <view class="weui-cell__bd weui-flex">
+                        <input
+                                class="weui-input"
+                                type="text"
+                                placeholder="请输入低于20组的数字"
+                                placeholder-class="weui-input__placeholder"
+                                value="{{value}}"
+                                bindinput="onInput"
+                        />
+                        <view wx:if="{{showClearBtn}}" class="weui-btn_reset weui-btn_icon weui-btn_input-clear" bindtap="onClear">
+                            <i class="weui-icon-clear"></i>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-cells weui-cells_checkbox">
+                    <checkbox-group bindchange="checkboxChange" style="display: flex">
+                        <label class="weui-cell weui-cell_active weui-check__label" wx:for="{{items}}" wx:key="name" style="width: 40%;">
+                            <view class="weui-cell__hd">
+                                <checkbox
+                                        class="weui-check"
+                                        value="{{item.name}}"
+                                        checked="{{item.checked}}"
+                                />
+                                <i class="weui-icon-checked"></i>
+                            </view>
+                            <view class="weui-cell__bd">
+                                <view>{{item.value}}</view>
+                            </view>
+                        </label>
+                    </checkbox-group>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-form__opr-area" style="margin-top: 20rpx;">
+            <a class="weui-btn weui-btn_primary" bindtap="onConfirm">生成</a>
+        </view>
+        <view style="height: 800rpx">
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell" wx:for="{{length}}">
+                    <view class="weui-cell__bd">{{num}}</view>
+                    <a class="weui-btn weui-btn_default" style="width: 200rpx">复制</a>
+                </view>
+            </view>
+        </view>
+        <view class="weui-form__tips-area">
+            <view class="weui-form__tips">
+                点击生成即表示<a href="javascript:">同意用户协议</a>
+            </view>
+        </view>
+    </view>
+</view>

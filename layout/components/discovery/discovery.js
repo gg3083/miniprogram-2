@@ -42,8 +42,8 @@ Component({
       },
       {
           imgUrl: "/assets/images/address.png",
-          url: "/pages/address/address",
-          text: '地址'
+          url: "/pages/ball/ball",
+          text: '球'
       },
       {
           imgUrl: "/assets/images/map.png",
