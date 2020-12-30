@@ -11,7 +11,7 @@
                         <input
                                 class="weui-input"
                                 type="text"
-                                placeholder="请输入低于20组的数字"
+                                placeholder="请输入低于20的数字"
                                 placeholder-class="weui-input__placeholder"
                                 value="{{value}}"
                                 bindinput="onInput"
@@ -46,8 +46,8 @@
         </view>
         <view style="height: 800rpx">
             <view class="weui-cells weui-cells_after-title">
-                <view class="weui-cell" wx:for="{{length}}">
-                    <view class="weui-cell__bd">{{num}}</view>
+                <view class="weui-cell" wx:for="{{num}}">
+                    <view class="weui-cell__bd">{{item}}</view>
                     <a class="weui-btn weui-btn_default" style="width: 200rpx">复制</a>
                 </view>
             </view>
@@ -58,4 +58,5 @@
             </view>
         </view>
     </view>
+    <view wx:if="{{topTips}}" class="weui-toptips weui-toptips_warn" style="display: block;">{{errMsg}}</view>
 </view>
